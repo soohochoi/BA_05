@@ -1,5 +1,4 @@
-# BA_05
-BA_05 Semi-supervised Learning
+# BA_05 Semi-supervised Learning
 
 <p align="center"><img width="604" alt="image" src="https://user-images.githubusercontent.com/97882448/208838979-8e8275d1-1cba-46e7-a584-da075e5a9c54.png">
 
