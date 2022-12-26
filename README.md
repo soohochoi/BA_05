@@ -3,7 +3,17 @@
 <p align="center"><img width="604" alt="image" src="https://user-images.githubusercontent.com/97882448/208838979-8e8275d1-1cba-46e7-a584-da075e5a9c54.png">
 
 이자료는 고려대학교 비니지스 애널리틱스 강필성교수님께 배운 Semi-supervised learning을 바탕으로 만들어졌습니다.
-먼저, Semi-supervised learning의 방식의 기본적인 개념을 배운후에 Consistency regularization개념 및 코드를 통해 직접 구현을 해봄으로써 이해를 돕도록하겠습니다.
+먼저, Semi-supervised learning의 방식의 기본적인 개념을 배운후에 Consistency regularization개념을 공부한 후에 그중 대표적인 ladder networks를 설명 및 구현을 해봄으로써 이해를 돕도록하겠습니다. 
+  
+## 목차
+### 1. [Semi-supervised learning 개념설명](#semi-supervised-learning-개념설명)
+### 2. [Semi-supervised learning-Consistency regularization](#semi-supervised-learning-consistency-regularization)
+### 3. [Consistency regularization-Ladder network](#consistency-regularization-ladder-network)
+### 4. [Data set 소개](#ensemble-learning에서-random_forest와-xg-boost-실습코드)
+  #### 4.1. [데이터 셋 소개](#data-set-소개)
+  #### 4.2. [코드구현-laddder_networks 모델생성](#코드구현-laddder_networks-모델생성)
+  #### 4.3. [코드구현-실행파일](#코드구현-실행파일)
+  #### 4.4. [결론](#결론)
 
 ## Semi-supervised learning 개념설명
 
