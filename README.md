@@ -15,3 +15,11 @@
 <p align="center"><img width="900" alt="image" src="https://user-images.githubusercontent.com/97882448/209476776-5b7927cf-4929-4ded-823f-9f4c1e252f21.png">
 
 Consistency regularization이란 Unlabeled data point에 작은 변화를 주어도 예측의 결과에는 일관성이 있을 것이라는 가정에서 출발합니다. 또한 Unlabeled data는 예측결과를 알 수 없기 때문에 data augmentation을 통해 class가 바뀌지 않을 정도의 변화를 줬을 때, 원래 데이터와의 예측결과가 같아지도록 unsupervised loss를 주어 학습합니다.
+
+## Consistency regularization-Ladder network
+  
+<p align="center"><img width="900" alt="image" src="https://user-images.githubusercontent.com/97882448/209515640-c6b0c580-f9a8-4b7e-8dcd-1559ccb8e7d7.png">
+
+Ladder network란 지도학습과 비지도학습을 결합한 딥러닝 모형입니다.
+위쪽그림을 보시면 비지도 학습 pre-training에서 끝나지 않고 지도학습과 함께 training하며 2개의 인코더와 1개의 디코더로 이루어집니다.
+Hierarchical latent variable model의 계층적인 특징을 반영한 오토 인코더를 사용하였고 층들의 연결을 Deterministic이 아니라 Stochastic으로 바꿔 주는것이 특징이며 효과적인 학습을 위해 Denoising기법을 활용한 모양이 꼭 사다리와 닮아 있어 Ladder network라고 합니다. Denoising이란 잡음을 추가한 데이터를 학습하여 데이터가 가지고 있는 본래의 고유한 특징을 더 잘 찾기 위한 방법이다.
