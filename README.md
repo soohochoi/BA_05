@@ -200,7 +200,7 @@ pip install tensorflow-gpu
     
  ```python
 #케라스 install
-#!pip install q keras==2.2.5
+!pip install q keras==2.2.5
  ```
  케라스를 버전에 주의해 install 해준다.
  ```python
