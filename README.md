@@ -196,7 +196,7 @@ pip install tensorflow==1.14.0
 #gpu
 pip install tensorflow-gpu
  ```
-먼저 tensoflow를 깔아야하는데 
+먼저 가상환경을 통해 python=3.6으로 설정해주고 tensoflow를 위코드와 같이 install한다. cpu는 pip install tensorflow==1.14.0만 실행하면 되지만 gpu의 경우 설치방법이 복잡하니 [tensoflow-gpu 설정](https://chancoding.tistory.com/223,"tensoflow-gpu 설정")을 참고하도록한다.
 
  ```python
 #from keras.datasets import mnist
