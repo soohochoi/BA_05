@@ -39,7 +39,7 @@ MNIST는 숫자 0부터 9까지의 이미지로 구성된 손글씨 데이터셋
 Fashoin_Mnist는 기존의 MNIST 데이터셋(10개 카테고리의 손으로 쓴 숫자)을 대신해 사용할 수 있는 데이터입니다. MNIST와 동일한 이미지 크기(28x28)이며 훈련데이터와 학습데이터의 수도 동일합니다. 대신 라벨이 숫자가 아니라 옷이며 0부터 9까지 이름은 0:티셔츠/탑, 1: 바지, 2: 풀오버(스웨터의 일종) ,3: 드레스, 4: 코트, 5: 샌들, 6: 셔츠, 7: 스니커즈, 8: 가방, 9:앵클 부츠 입니다.
     
 
-## 코드구현-laddder_networks 모델생
+## 코드구현-laddder_networks 모델생성
 
 ```python
  #모델을 만들기위해 keras를 불러옴
@@ -189,3 +189,50 @@ def get_ladder_network_fc(layer_sizes=[784, 1000, 500, 250, 250, 250, 10],
 
     return tr_m
  ```
+## 코드구현-실행파일
+ ```python
+#from keras.datasets import mnist
+from tensorflow.keras.datasets import fashion_mnist
+import keras
+import random
+from sklearn.metrics import accuracy_score
+import numpy as np
+from ladder_networks import ladder_network
+
+# mnist 데이터의 사이즈
+data_size = 28*28
+#y값의 갯수
+labels = 10
+#데이터를 불러옴
+(x_train, y_train), (x_test, y_test) =  fashion_mnist.load_data()
+#28*28을 1*784로 만들어주고 255를 나눠서 데이터를 정규화하기위한 방법
+x_train = x_train.reshape(60000, data_size).astype('float32')/255
+x_test  = x_test.reshape(10000,  data_size).astype('float32')/255
+#카태고리컬 하게 라벨들을 바꾸어줌 one-hot 인코딩임
+y_train = keras.utils.to_categorical(y_train, labels)
+y_test  = keras.utils.to_categorical(y_test,  labels)
+
+# 100개 데이터 랜덤추출
+numbers_shape = range(x_train.shape[0])
+random.seed(2023)
+numbers_shape = np.random.choice(x_train.shape[0], 100)
+
+Unlabeled_x_train = x_train
+labeled_x_train = x_train[numbers_shape]
+labeled_y_train = y_train[numbers_shape]
+#몫으로 나눈다음 concat해서 traindata 갯수 맞춰주기
+quont = Unlabeled_x_train.shape[0] // labeled_x_train.shape[0]
+labeled_x_train_quont = np.concatenate([labeled_x_train]*quont)
+labeled_y_train_quont = np.concatenate([labeled_y_train]*quont)
+
+# 모델생성
+model = get_ladder_network_fc(layer_sizes=[data_size, 1000, 500, 250, 250, 250, labels])
+
+# 배치사이즈를 100번 돌림
+for _ in range(100):
+    model.fit([labeled_x_train_quont, Unlabeled_x_train], labeled_y_train_quont, epochs=100)
+    y_test_pr = model.test_model.predict(x_test, batch_size=100)
+    print("Test 정확도는 %f 나왔습니다." % accuracy_score(y_test.argmax(-1), y_test_pr.argmax(-1)))
+ ```
+##결론
+ 
