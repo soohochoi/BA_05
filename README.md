@@ -9,11 +9,10 @@
 ### 1. [Semi-supervised learning 개념설명](#semi-supervised-learning-개념설명)
 ### 2. [Semi-supervised learning-Consistency regularization](#semi-supervised-learning-consistency-regularization)
 ### 3. [Consistency regularization-Ladder network](#consistency-regularization-ladder-network)
-### 4. [Data set 소개](#ensemble-learning에서-random_forest와-xg-boost-실습코드)
-  #### 4.1. [데이터 셋 소개](#data-set-소개)
-  #### 4.2. [코드구현-laddder_networks 모델생성](#코드구현-laddder_networks-모델생성)
-  #### 4.3. [코드구현-실행파일](#코드구현-실행파일)
-  #### 4.4. [결론](#결론)
+  #### 3.1. [데이터 셋 소개](#data-set-소개)
+  #### 3.2. [코드구현-laddder_networks 모델생성](#코드구현-laddder_networks-모델생성)
+  #### 3.3. [코드구현-실행파일](#코드구현-실행파일)
+  #### 3.4. [결론](#결론)
 
 ## Semi-supervised learning 개념설명
 
