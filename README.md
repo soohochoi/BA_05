@@ -191,6 +191,14 @@ def get_ladder_network_fc(layer_sizes=[784, 1000, 500, 250, 250, 250, 10],
  ```
 ## 코드구현-실행파일
  ```python
+#cpu
+pip install tensorflow==1.14.0
+#gpu
+pip install tensorflow-gpu
+ ```
+먼저 tensoflow를 깔아야하는데 
+
+ ```python
 #from keras.datasets import mnist
 from tensorflow.keras.datasets import fashion_mnist
 import keras
