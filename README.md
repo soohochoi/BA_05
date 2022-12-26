@@ -200,7 +200,7 @@ pip install tensorflow-gpu
     
  ```python
 #케라스 install
-!pip install q keras==2.2.5
+pip install q keras==2.2.5
  ```
  케라스를 버전에 주의해 install 해준다.
  ```python
@@ -249,6 +249,12 @@ for _ in range(100):
  ```
 ## 결론
 
-mnist와 0.962300  패션 mnist정확도:??
+mnist와 0.962300  Fashion_mnist정확도:?? 표로 만들기
     
 
+laddder networks를 구현해봄으로써 코드의 이해도가 보다 깊어졌으며 semi-supervised learning의 method에 대해 알수있는 시간이었음
+    
+---
+ ### Reference
+ 1. https://sustaining-starflower-aff.notion.site/2022-2-0e068bff3023401fa9fa13e96c0269d7 <강필성교수님 자료>
+ 2. https://github.com/NANDINI-star/Semi-Supervised-Learning-with-Ladder-Networ <laddder networks 참고자료>
