@@ -22,4 +22,6 @@ Consistency regularization이란 Unlabeled data point에 작은 변화를 주어
 
 Ladder network란 지도학습과 비지도학습을 결합한 딥러닝 모형입니다.
 위쪽그림을 보시면 비지도 학습 pre-training에서 끝나지 않고 지도학습과 함께 training하며 2개의 인코더와 1개의 디코더로 이루어집니다.
-Hierarchical latent variable model의 계층적인 특징을 반영한 오토 인코더를 사용하였고 층들의 연결을 Deterministic이 아니라 Stochastic으로 바꿔 주는것이 특징이며 효과적인 학습을 위해 Denoising기법을 활용한 모양이 꼭 사다리와 닮아 있어 Ladder network라고 합니다. Denoising이란 잡음을 추가한 데이터를 학습하여 데이터가 가지고 있는 본래의 고유한 특징을 더 잘 찾기 위한 방법이다.
+Hierarchical latent variable model의 계층적인 특징을 반영한 오토 인코더를 사용하였고 층들의 연결을 Deterministic이 아니라 Stochastic으로 바꿔 주는것이 특징이며 효과적인 학습을 위해 Denoising기법을 활용한 모양이 꼭 사다리와 닮아 있어 Ladder network라고 합니다. Denoising이란 잡음을 추가한 데이터를 학습하여 데이터가 가지고 있는 본래의 고유한 특징을 더 잘 찾기 위한 방법입니다. 구조를 조금더 자세히 보면 먼저 라벨이 있는 데이터는 가우시안 노이즈를 넣은 corrupted  f path와 Clean f path의 값이 빨간색처럼 유사하게 학습을합니다. 또한 corrupted f path가 Denoising q path로 넘어가서 하늘색처럼 Clean f path와  hidden state가 유사하도록 학습합니다. 라벨이 없는 데이터는 답이 없기 때문에 하늘색과 같은 loss만 최소화 시키는 것으로 학습이 진행되고 이러한 구조를 변형해서 디코더에서 가장 높은 layer만  사용하는 모델인 𝛾−모델이 있습니다
+  
+  
