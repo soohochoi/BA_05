@@ -234,5 +234,8 @@ for _ in range(100):
     y_test_pr = model.test_model.predict(x_test, batch_size=100)
     print("Test 정확도는 %f 나왔습니다." % accuracy_score(y_test.argmax(-1), y_test_pr.argmax(-1)))
  ```
-##결론
- 
+## 결론
+
+mnist와 0.962300  패션 mnist정확도:??
+    
+
