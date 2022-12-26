@@ -1,3 +1,5 @@
+python=3.6
+
 #cpu
 tensorflow==1.14
 
