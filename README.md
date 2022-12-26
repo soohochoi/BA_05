@@ -22,6 +22,20 @@ Consistency regularization이란 Unlabeled data point에 작은 변화를 주어
 
 Ladder network란 지도학습과 비지도학습을 결합한 딥러닝 모형입니다.
 위쪽그림을 보시면 비지도 학습 pre-training에서 끝나지 않고 지도학습과 함께 training하며 2개의 인코더와 1개의 디코더로 이루어집니다.
-Hierarchical latent variable model의 계층적인 특징을 반영한 오토 인코더를 사용하였고 층들의 연결을 Deterministic이 아니라 Stochastic으로 바꿔 주는것이 특징이며 효과적인 학습을 위해 Denoising기법을 활용한 모양이 꼭 사다리와 닮아 있어 Ladder network라고 합니다. Denoising이란 잡음을 추가한 데이터를 학습하여 데이터가 가지고 있는 본래의 고유한 특징을 더 잘 찾기 위한 방법입니다. 구조를 조금더 자세히 보면 먼저 라벨이 있는 데이터는 가우시안 노이즈를 넣은 corrupted  f path와 Clean f path의 값이 빨간색처럼 유사하게 학습을합니다. 또한 corrupted f path가 Denoising q path로 넘어가서 하늘색처럼 Clean f path와  hidden state가 유사하도록 학습합니다. 라벨이 없는 데이터는 답이 없기 때문에 하늘색과 같은 loss만 최소화 시키는 것으로 학습이 진행되고 이러한 구조를 변형해서 디코더에서 가장 높은 layer만  사용하는 모델인 𝛾−모델이 있습니다
+Hierarchical latent variable model의 계층적인 특징을 반영한 오토 인코더를 사용하였고 층들의 연결을 Deterministic이 아니라 Stochastic으로 바꿔 주는것이 특징이며 효과적인 학습을 위해 Denoising기법을 활용한 모양이 꼭 사다리와 닮아 있어 Ladder network라고 합니다. Denoising이란 잡음을 추가한 데이터를 학습하여 데이터가 가지고 있는 본래의 고유한 특징을 더 잘 찾기 위한 방법입니다. 
   
+구조를 조금더 자세히 보면 먼저 라벨이 있는 데이터는 가우시안 노이즈를 넣은 corrupted  f path와 Clean f path의 값이 빨간색처럼 유사하게 학습을합니다. 또한 corrupted f path가 Denoising q path로 넘어가서 하늘색처럼 Clean f path와  hidden state가 유사하도록 학습합니다. 라벨이 없는 데이터는 답이 없기 때문에 하늘색과 같은 loss만 최소화 시키는 것으로 학습이 진행되고 이러한 구조를 변형해서 디코더에서 가장 높은 layer만  사용하는 모델인 𝛾−모델이 있습니다
+
+## Data set 소개
+  ### Mnist
   
+ <p align="center"><img width="900" alt="image" src="https://user-images.githubusercontent.com/97882448/209575433-8e15ddfb-2234-47b7-8276-64dee9e86ce8.png">
+
+MNIST는 숫자 0부터 9까지의 이미지로 구성된 손글씨 데이터셋입니다. 이 데이터의 기원은 과거에 우체국에서 편지의 우편 번호를 인식하기 위해서 만들어진 훈련 데이터이며 총 60,000개의 훈련 데이터와 레이블, 총 10,000개의 테스트 데이터와 레이블로 구성되어져 있습니다. 레이블은 0부터 9까지 총 10개이며 이 예제는 머신 러닝을 처음 배울 때 접하게 되는 가장 기본적인 예제이기도 합니다. 
+  ### Fashoin_Mnist
+ 
+  <p align="center"><img width="900" alt="image" src="https://user-images.githubusercontent.com/97882448/209575744-fd50e361-5fd8-468c-ac03-7cec14ecade2.png">
+
+Fashoin_Mnist는 기존의 MNIST 데이터셋(10개 카테고리의 손으로 쓴 숫자)을 대신해 사용할 수 있는 데이터입니다. MNIST와 동일한 이미지 크기(28x28)이며 훈련데이터와 학습데이터의 수도 동일합니다. 대신 라벨이 숫자가 아니라 옷이며 0부터 9까지 이름은 0:티셔츠/탑, 1: 바지, 2: 풀오버(스웨터의 일종) ,3: 드레스, 4: 코트, 5: 샌들, 6: 셔츠, 7: 스니커즈, 8: 가방, 9:앵클 부츠 입니다.
+    
+
