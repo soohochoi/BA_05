@@ -1,2 +1,7 @@
+#cpu
 tensorflow==1.14
+#gpu
+pip install tensorflow-gpu
 keras==2.2.5
+
+확실히 cpu보다 gpu가 성능이 더 좋으나 일반 노트북일경우 gpu가 없는 경우도 있기에 두 버전을 다 준비 하였음
