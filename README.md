@@ -258,7 +258,7 @@ for _ in range(100):
  ```
 ## 결론
 
-mnist와 0.962300  Fashion_mnist정확도:?? 표로 만들기
+<p align="center"><img width="846" alt="image" src="https://user-images.githubusercontent.com/97882448/209616775-e0027b0e-1106-427f-a21a-d2ae8c0805e8.png">
     
 
 laddder networks를 구현해봄으로써 코드의 이해도가 보다 깊어졌으며 semi-supervised learning의 method에 대해 알수있는 시간이었음
