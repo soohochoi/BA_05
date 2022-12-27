@@ -260,8 +260,7 @@ for _ in range(100):
 
 <p align="center"><img width="846" alt="image" src="https://user-images.githubusercontent.com/97882448/209616775-e0027b0e-1106-427f-a21a-d2ae8c0805e8.png">
     
-
-laddder networks를 구현해봄으로써 코드의 이해도가 보다 깊어졌으며 semi-supervised learning의 method에 대해 알수있는 시간이었음
+결과를 보면 mnist는 정확도가 96.23%로 높이 나왔으나 fashoin_mnist는 77.38%로 mnist에 비해 좋은 정확도를 얻진 못했다. 그러나 laddder networks를 구현해봄으로써 코드의 이해도가 보다 깊어졌으며 semi-supervised learning의 method에 대해 알수있는 시간이었다.
     
 ---
  ### Reference
